@@ -90,3 +90,12 @@ packages/ui/          # Shared UI components for chat interface
 3. Build chat UI components
 4. Connect UI to Claude Code instances
 5. Add instance management features
+
+## Code Style and Conventions
+
+### File Naming
+- **Components**: Use kebab-case for all component files (e.g., `chat-interface.tsx`, `message-list.tsx`)
+- **Utilities**: Use kebab-case for utility files (e.g., `claude-instance.ts`)
+- **Routes**: Use kebab-case for route files
+
+This is enforced by Biome's `useFilenamingConvention` rule.

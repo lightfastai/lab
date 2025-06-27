@@ -39,3 +39,10 @@ coverage/
 # Misc
 *.pem
 .turbo/
+
+# Build outputs
+dist/
+build/
+
+# TypeScript
+tsconfig.tsbuildinfo

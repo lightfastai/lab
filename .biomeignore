@@ -1,0 +1,6 @@
+src/routeTree.gen.ts
+node_modules
+dist
+build
+.next
+.turbo

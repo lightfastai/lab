@@ -8,8 +8,17 @@
     "defaultBranch": "main"
   },
   "files": {
-    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx", "app/**/*.ts", "app/**/*.tsx", "app/**/*.js", "app/**/*.jsx"],
-    "ignore": ["**/node_modules", "**/dist", "**/.next", "**/build", "**/.turbo"]
+    "includes": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.js",
+      "src/**/*.jsx",
+      "app/**/*.ts",
+      "app/**/*.tsx",
+      "app/**/*.js",
+      "app/**/*.jsx"
+    ],
+    "ignoreUnknown": false
   },
   "linter": {
     "enabled": true,
@@ -21,7 +30,13 @@
       },
       "style": {
         "useConst": "error",
-        "useTemplate": "error"
+        "useTemplate": "error",
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "filenameCases": ["kebab-case"]
+          }
+        }
       },
       "performance": {
         "noDelete": "error"
@@ -58,8 +73,5 @@
       "lineWidth": 120,
       "trailingCommas": "none"
     }
-  },
-  "organizeImports": {
-    "enabled": true
   }
 }

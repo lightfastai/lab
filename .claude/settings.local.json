@@ -3,7 +3,9 @@
     "allow": [
       "Bash(rm:*)",
       "Bash(pnpm add:*)",
-      "WebFetch(domain:tauri.app)"
+      "WebFetch(domain:tauri.app)",
+      "Bash(git mv:*)",
+      "Bash(tsc --noEmit)"
     ],
     "deny": []
   }
