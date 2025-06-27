@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "identifier": "ai.lightfast.claudecode",
   "build": {
-    "frontendDist": "../out",
-    "beforeBuildCommand": "pnpm next:build",
-    "beforeDevCommand": "pnpm next:dev",
-    "devUrl": "http://localhost:3000"
+    "frontendDist": "../dist",
+    "beforeBuildCommand": "pnpm vite:build",
+    "beforeDevCommand": "pnpm vite:dev",
+    "devUrl": "http://localhost:3333"
   },
   "app": {
     "withGlobalTauri": true,

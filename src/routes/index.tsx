@@ -1,24 +1,23 @@
-"use client";
+import { createFileRoute } from '@tanstack/react-router'
+import { useState } from 'react'
+import ChatInterface from '../components/ChatInterface'
+import InstanceSelector from '../components/InstanceSelector'
+import { ClaudeInstance } from '../lib/claude-instance'
 
-import { useState } from "react";
-import ChatInterface from "@/components/ChatInterface";
-import InstanceSelector from "@/components/InstanceSelector";
-import { ClaudeInstance } from "@/lib/claude-instance";
+function HomePage() {
+  const [instances, setInstances] = useState<ClaudeInstance[]>([])
+  const [activeInstanceId, setActiveInstanceId] = useState<string | null>(null)
 
-export default function Home() {
-  const [instances, setInstances] = useState<ClaudeInstance[]>([]);
-  const [activeInstanceId, setActiveInstanceId] = useState<string | null>(null);
-
-  const activeInstance = instances.find(inst => inst.id === activeInstanceId);
+  const activeInstance = instances.find(inst => inst.id === activeInstanceId)
 
   const createNewInstance = () => {
-    const newInstance = new ClaudeInstance();
-    setInstances([...instances, newInstance]);
-    setActiveInstanceId(newInstance.id);
-  };
+    const newInstance = new ClaudeInstance()
+    setInstances([...instances, newInstance])
+    setActiveInstanceId(newInstance.id)
+  }
 
   return (
-    <div className="flex h-screen bg-gray-900">
+    <div className="flex h-full">
       <InstanceSelector
         instances={instances}
         activeInstanceId={activeInstanceId}
@@ -43,5 +42,9 @@ export default function Home() {
         )}
       </div>
     </div>
-  );
+  )
 }
+
+export const Route = createFileRoute('/')({ 
+  component: HomePage,
+})
